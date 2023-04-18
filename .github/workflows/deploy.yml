@@ -1,0 +1,25 @@
+name: sctructurizr-cli  # feel free to pick your own name
+
+on: [push, pull_request]
+
+jobs:
+  structurizr-cli:
+    runs-on: ubuntu-latest
+    name: Run structurizr-cli
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Run structurizr-cli action
+        uses: aidmax/structurizr-cli-action@v0.2.1
+        id: test
+        with:
+          id: # The workspace ID (required)
+          key: # The workspace API key (required)
+          secret: # The workspace API secret (required)
+          workspace: # The path to the workspace JSON file/DSL file(s) (required)
+
+          # optional parameters
+          url: # The Structurizr API URL (optional; defaults to https://api.structurizr.com)
+          passphrase: # The passphrase to use (optional; only required if client-side encryption enabled on the workspace)
