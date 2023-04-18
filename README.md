@@ -1,0 +1,1 @@
+# structurizr-c4-template
